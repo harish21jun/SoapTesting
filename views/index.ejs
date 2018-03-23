@@ -1,0 +1,33 @@
+<div class="jumbotron">
+	<h2>Welcome to <%= title %></h2>
+	<br>
+<p>Enter Soap project, Test suite, Test case and host details to test</p>
+<br>
+
+
+	<h3>Test Details</h3>
+	<form method="POST" action="/project/test">
+		<label class="control-label">Root (Soap Project and output location )</label>
+		<input type="text" id="root" class="form-control" name="root" value="<%= testDetails.root %>" />
+
+		<label class="control-label">Project</label>
+		<input type="text" id="project" class="form-control" name="project" value="<%= testDetails.project %>" />
+
+		<label class="control-label">Test Suite (optional)</label>
+		<input type="text" id="testsuite" class="form-control" name="testsuite" value="<%= testDetails.testsuite %>" />
+
+		<label class="control-label">Test Case (optional)</label>
+		<input type="text" id="testcase" class="form-control" name="testcase" value="<%= testDetails.testcase %>" />
+
+		<label class="control-label">Host (optional, pass if project level host property need to be overwritten) </label>
+		<input type="text" id="host" class="form-control" name="host" value="<%= testDetails.host %>" />
+
+		<br/>
+		<p>
+
+			<input class="btn btn-sm btn-primary" type="submit" value=" Test ">
+				<a class="btn btn-sm btn-primary" href="/" role="button">Cancel</a>
+		</p>
+
+	</form>
+</div>

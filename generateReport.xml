@@ -1,0 +1,23 @@
+ <project name="genTestReport" default="gen" basedir="." >
+        <description>
+                Generate the HTML report from JUnit XML files
+        </description>
+
+        <target name="gen">
+			<property name="root" value="world"/>
+                <property name="genReportDir" location="${root}/TestReports"/>
+                <delete dir="${genReportDir}"/>
+                <mkdir dir="${genReportDir}"/>
+                <junitreport todir="${root}/TestReports">
+                        <fileset dir="${root}">
+                                <include name="**/TEST-*.xml"/>
+                        </fileset>
+                        <report format="frames" todir="${genReportDir}/html"/>
+                </junitreport>
+				
+				<!--<xslt basedir="${root}" destdir="${root}/TestReports"  extension=".html" style="style/Report.xsl">
+				<mapper type="glob" from="*_log_report.xml" to="*.html"/>
+				</xslt>
+				-->
+        </target>
+</project>
